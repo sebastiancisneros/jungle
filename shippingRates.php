@@ -1,9 +1,8 @@
 <?php
 
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
-echo $root;
-exit();
-require_once("../easypost-php/lib/easypost.php");
+
+require_once($root."/easypost-php/lib/easypost.php");
 
 function connectToDb(){
     $link = mysqli_connect('shipping.ceg9fco2h5qr.us-west-2.rds.amazonaws.com', 'admin', 'Kllejero09!', 'spOrders', 3306);
@@ -57,7 +56,7 @@ if($_REQUEST['request'] == "label"){
       "orderId" => $orderId,
       "url" => $labelUrl,
   );
-  createShippingLabelPDF($label);
+  createShippingLabelPDF($root, $label);
 }
 function createShipment($recipient, $measurements){
     $to_address = \EasyPost\Address::create_and_verify(
@@ -284,12 +283,12 @@ function getShipment($shipmentId){
   $shipment = \EasyPost\Shipment::retrieve($shipmentId);
   return $shipment;
 }
-function createShippingLabelPDF($label){
+function createShippingLabelPDF($root, $label){
   //header('Content-type: application/pdf');
     // Create PDF
-    require_once('FPDF/fpdf.php');
-    require_once('FPDF/FPDI/src/autoload.php');
-    require_once('FPDF/rotation.php');
+    require_once($root.'/FPDF/fpdf.php');
+    require_once($root.'/FPDF/FPDI/src/autoload.php');
+    require_once($root.'FPDF/rotation.php');
     class PDF extends PDF_Rotate
     {
         function RotatedText($x, $y, $txt, $angle)
