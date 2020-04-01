@@ -95,7 +95,6 @@ $response_result = $reponse_array->result;
         </div>
       </div>';
     }
-    echo 'ye ';
     $order_list = $order_list.'<li class="order">
                 <div class="number">'.$order_d->orderNumber.'</div>
                 <div class="date">'.$orderDate->format('M d, Y').'</div>
@@ -105,6 +104,7 @@ $response_result = $reponse_array->result;
                 .$rates.'
               </li>';
   }
+  echo $order_list;
 ?>
 <!DOCTYPE html>
 <head>
