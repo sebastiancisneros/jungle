@@ -1,6 +1,6 @@
 <?php
 
-require_once("easypost-php/lib/easypost.php");
+require_once("/easypost-php/lib/easypost.php");
 
 function connectToDb(){
     $link = mysqli_connect('shipping.ceg9fco2h5qr.us-west-2.rds.amazonaws.com', 'admin', 'Kllejero09!', 'spOrders', 3306);
@@ -252,7 +252,7 @@ function buyShippingLabel($shipment, $carrier, $service, $orderId){
       "orderId" => $orderId,
       "shipmentId" => $shipment->id,
   );
-  $label_url = $shipment->postage_label->label_url;  
+  $label_url = $shipment->postage_label->label_url;
   $carrier = $shipment->selected_rate->carrier;
   $tracking = $shipment->tracking_code;
 
