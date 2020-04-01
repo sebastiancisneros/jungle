@@ -140,10 +140,5 @@ $response_result = $reponse_array->result;
       echo $order_list;
       ?>
   </ul>
-
-  <?php
-  echo $estimateResultsFema;
-  ?>
-
 </body
 </html>
