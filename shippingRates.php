@@ -1,5 +1,8 @@
 <?php
 
+$root = realpath($_SERVER["DOCUMENT_ROOT"]);
+echo $root;
+exit();
 require_once("../easypost-php/lib/easypost.php");
 
 function connectToDb(){
