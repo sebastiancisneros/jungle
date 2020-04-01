@@ -28,13 +28,10 @@ curl_setopt($handle, CURLOPT_HTTPHEADER, array(
 
 
 $output = curl_exec($handle);
-echo 'hello'.$output;
-exit();
 $reponse_array = json_decode($output);
 curl_close($handle);
 
 $response_result = $reponse_array->result;
-//print_r($response_result);
    $order_list ="";
    foreach($response_result as $key => $value) {
     $order_d = $response_result[$key];
@@ -98,6 +95,7 @@ $response_result = $reponse_array->result;
         </div>
       </div>';
     }
+    echo 'ye ';
     $order_list = $order_list.'<li class="order">
                 <div class="number">'.$order_d->orderNumber.'</div>
                 <div class="date">'.$orderDate->format('M d, Y').'</div>
