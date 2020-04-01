@@ -28,6 +28,8 @@ curl_setopt($handle, CURLOPT_HTTPHEADER, array(
 
 
 $output = curl_exec($handle);
+echo $output;
+exit();
 $reponse_array = json_decode($output);
 curl_close($handle);
 
