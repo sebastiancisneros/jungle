@@ -33,7 +33,7 @@ curl_close($handle);
 
 $response_result = $reponse_array->result;
 //print_r($response_result);
-
+   $order_list ="";
    foreach($response_result as $key => $value) {
     $order_d = $response_result[$key];
     $orderDate = new DateTime($order_d->createdOn); // datetime object

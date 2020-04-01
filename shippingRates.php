@@ -19,11 +19,13 @@ function connectToDb(){
 //header("Content-Type: application/json; charset=UTF-8");
 //$shipData = json_decode($_POST[shippingData]);
 //var_dump($shipData);
-$shippingData = json_decode($_POST['shippingData']);
 
 
 //var_dump($shippingData);
-if ($shippingData){
+$request = "";
+
+if ($_POST){
+  $shippingData = json_decode($_POST['shippingData']);
   $orderId = $shippingData->orderId;
   $recipient['name'] = $shippingData->name;
   $recipient['company'] = $shippingData->company;
@@ -49,15 +51,16 @@ if($request == "buy"){
   $shipment = createShipment($recipient, $measurements);
   buyShippingLabel($shipment, $carrier, $service, $orderId);
 }
-
-if($_REQUEST['request'] == "label"){
-  $orderId = $_REQUEST['orderId'];
-  $labelUrl = $_REQUEST['labelUrl'];
-  $label = array(
-      "orderId" => $orderId,
-      "url" => $labelUrl,
-  );
-  createShippingLabelPDF($label);
+if($_REQUEST){
+  if($_REQUEST['request'] == "label"){
+    $orderId = $_REQUEST['orderId'];
+    $labelUrl = $_REQUEST['labelUrl'];
+    $label = array(
+        "orderId" => $orderId,
+        "url" => $labelUrl,
+    );
+    createShippingLabelPDF($label);
+  }
 }
 function createShipment($recipient, $measurements){
     $to_address = \EasyPost\Address::create_and_verify(
