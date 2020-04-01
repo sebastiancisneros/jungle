@@ -1,0 +1,237 @@
+
+header h1.logo{
+  background:url(/images/cloudforest%20logo.svg) no-repeat 0px 0px;
+  background-size: 180px auto;
+  text-shadow: 1px 1px 1px #999999;
+  font-size: 24px;
+  color:rgb(0, 0, 0);
+  margin: 30px 0px 5px 45px;
+  padding: 2px 0px 0px 195px;
+}
+body{
+  font-size: 13px;
+  font-family: Futura;
+}
+ul.free{
+  float: left;
+  width: 1000px;
+}
+ul.free li{
+  border-bottom: 1px solid #CCCCCC;
+  float: left;
+  list-style: none;
+  padding: 15px 0px 15px 0px;
+  width: 100%;
+}
+  li.subHeader{
+    color:#999999;
+  }
+  li.order:hover{
+    background-color: #DDDDDD;
+  }
+ul.free li div{
+  float: left;
+  height: 25px;
+  line-height: 25px;
+  padding: 0px 20px 0px 0px;
+  text-align: center;
+}
+  .order div.number{
+    padding-left: 0px;
+    text-align: center;
+    width: 40px;
+  }
+  .order div.date{
+    width: 90px;
+  }
+  .order div.name{
+    width: 140px;
+  }
+  .order div.address{
+    width: 370px;
+  }
+  .order div.service{
+    width: 250px;
+  }
+    .order div.rates{
+    height: auto;
+    min-height: 50px;
+    margin: 10px 0px 0px 0px;
+    padding: 10px 2% 25px 2%;
+    width: 96%;
+  }
+    .rates h5{
+      margin: 0px 0px 0px 0px;
+      text-align: left;
+    }
+    .rates input[type=text]{
+      border: none;
+      border-radius: 2px;
+      border-bottom: 1px solid #999999;;
+      height: 30px;
+      margin: 0px 10px 0px 0px;
+      width:32px;
+      text-align: center;
+    }
+      li.order:hover input[type=text]{
+        background-color: #DDDDDD;
+      }
+      .rates input[type=text]:focus{
+        outline: none;
+        box-shadow: 0 0 1px rgba(81, 203, 238, 1);
+        border-bottom: 2px solid rgba(81, 203, 238, 1);
+      }
+      .rates div.button, .rates div.dimmensions, .rates div.results{
+        float:left;
+      }
+        .rates div.button, .rates div.dimmensions{
+          280px
+        }
+        .rates div.button{
+          padding: 30px 30px 0px 0px;
+          width:85px;
+        }
+    .rates .results{
+      float: left;
+      height: auto;
+      width:500px;
+    }
+      .rates .results li{
+        font-size: 11px;
+        border: none;
+        padding:3px 0px 0px 0px;
+      }
+      .rates .results input[type=radio]{
+        margin: 5px 10px 0px 0px;
+        float: left;
+      }
+      .rates .results li label div span{
+        padding: 0px 6px 0px 0px;
+      }
+        .rates .results .options, .rates .results .button{
+          float: left;
+        }
+        .rates .results .options{
+          height: auto;
+          width: 300px;
+        }
+          .rates .results .options .option{
+            padding-right: 0px;
+          }
+        .rates .results .button{
+          padding: 5px 0px 0px 0px;
+          width: 100px;
+        }
+        .rates .results .buyPostage{
+          width: 100px;
+        }
+/* Normal white Button as seen on Google.com*/
+button {
+    color: #444444;
+    background: #F3F3F3;
+    border: 1px #DADADA solid;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 9pt;
+    outline: none;
+}
+
+button:hover {
+    border: 1px #C6C6C6 solid;
+    box-shadow: 1px 1px 1px #EAEAEA;
+    color: #333333;
+    background: #F7F7F7;
+}
+
+button:active {
+    box-shadow: inset 1px 1px 1px #DFDFDF;
+}
+
+/* Blue button as seen on translate.google.com*/
+button.blue {
+    color: white;
+    background: #4C8FFB;
+    border: 1px #3079ED solid;
+    box-shadow: inset 0 1px 0 #80B0FB;
+}
+
+button.blue:hover {
+    border: 1px #2F5BB7 solid;
+    box-shadow: 0 1px 1px #EAEAEA, inset 0 1px 0 #5A94F1;
+    background: #3F83F1;
+}
+
+button.blue:active {
+    box-shadow: inset 0 2px 5px #2370FE;
+}
+
+/* Orange button as seen on blogger.com*/
+button.orange {
+    color: white;
+    border: 1px solid #FB8F3D;
+    background: -webkit-linear-gradient(top, #FDA251, #FB8F3D);
+    background: -moz-linear-gradient(top, #FDA251, #FB8F3D);
+    background: -ms-linear-gradient(top, #FDA251, #FB8F3D);
+}
+
+button.orange:hover {
+    border: 1px solid #EB5200;
+    background: -webkit-linear-gradient(top, #FD924C, #F9760B);
+    background: -moz-linear-gradient(top, #FD924C, #F9760B);
+    background: -ms-linear-gradient(top, #FD924C, #F9760B);
+    box-shadow: 0 1px #EFEFEF;
+}
+
+button.orange:active {
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.3);
+}
+
+/* Red Google Button as seen on drive.google.com */
+button.red {
+    background: -webkit-linear-gradient(top, #DD4B39, #D14836);
+    background: -moz-linear-gradient(top, #DD4B39, #D14836);
+    background: -ms-linear-gradient(top, #DD4B39, #D14836);
+    border: 1px solid #DD4B39;
+    color: white;
+    text-shadow: 0 1px 0 #C04131;
+}
+
+button.red:hover {
+     background: -webkit-linear-gradient(top, #DD4B39, #C53727);
+     background: -moz-linear-gradient(top, #DD4B39, #C53727);
+     background: -ms-linear-gradient(top, #DD4B39, #C53727);
+     border: 1px solid #AF301F;
+}
+
+button.red:active {
+     box-shadow: inset 0 1px 1px rgba(0,0,0,0.2);
+    background: -webkit-linear-gradient(top, #D74736, #AD2719);
+    background: -moz-linear-gradient(top, #D74736, #AD2719);
+    background: -ms-linear-gradient(top, #D74736, #AD2719);
+}
+
+/* Green button */
+button.green {
+    background: -webkit-linear-gradient(top, #4bdd39, #43e42f);
+    background: -moz-linear-gradient(top, #4bdd39, #43e42f);
+    background: -ms-linear-gradient(top, #4bdd39, #43e42f);
+    border: 1px solid #45d533;
+    color: white;
+    text-shadow: 0 1px 0 #56c131;
+    box-shadow: inset 0 1px 0 #8efb80;
+}
+
+button.green:hover {
+     background: -webkit-linear-gradient(top, #4bdd39, #2eb51e);
+     background: -moz-linear-gradient(top, #4bdd39, #2eb51e);
+     background: -ms-linear-gradient(top, #4bdd39, #2eb51e);
+     border: 1px solid #37b328;
+}
+
+button.green:active {
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.2);
+    background: -webkit-linear-gradient(top, #4ce739, #2bb31b);
+    background: -moz-linear-gradient(top, #4ce739, #2bb31b);
+    background: -ms-linear-gradient(top, #4ce739, #2bb31b);
+}
