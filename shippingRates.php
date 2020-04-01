@@ -277,7 +277,7 @@ function buyShippingLabel($shipment, $carrier, $service, $orderId){
     <div><h5>Label Purchase Confirmed!</h5>
     <div>
       <button class="printLabel green">Print Label</button>
-      <input class="labelUrl" value="'.$labelUrl.'" hidden>
+      <input class="labelUrl" value="'.$label_url.'" hidden>
     </div>
     <div>Tracking: <a href="'.$trackingURL.'" target="_blank">'.$tracking.'</a></div>';
   ;
