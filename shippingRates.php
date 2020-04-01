@@ -1,5 +1,9 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
+
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 
 require_once("easypost-php/lib/easypost.php");
