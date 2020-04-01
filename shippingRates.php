@@ -247,12 +247,12 @@ function buyShippingLabel($shipment, $carrier, $service, $orderId){
     'rate'      => $shipment->lowest_rate(array($carrier), array($service)),
     'insurance' => 249.99
   ));
-  //$label_url = 'https://easypost-files.s3-us-west-2.amazonaws.com/files/postage_label/20200331/33d96b115d6f41d788837e6cca6d2c15.png'; //$shipment->postage_label->label_url;
   //$tracking_code = '9461200897846036034181'; //$shipment->tracking_code;
   $label = array(
       "orderId" => $orderId,
       "shipmentId" => $shipment->id,
   );
+  $label_url = $shipment->postage_label->label_url;  
   $carrier = $shipment->selected_rate->carrier;
   $tracking = $shipment->tracking_code;
 
