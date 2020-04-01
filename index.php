@@ -107,8 +107,8 @@ $response_result = $reponse_array->result;
 ?>
 <!DOCTYPE html>
 <head>
-<title><? echo $pageTitle; ?></title>
-<meta name="description" content="<? echo $pageDescription; ?>" />
+<title>Cloudforest JUNGLE</title>
+<meta name="description" content="" />
 <meta name="Author" content="sebastian cisneros" />
 <meta http-equiv="Content-Type" content="text/; charset=utf-8" />
 <meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=2.0, maximum-scale=1,user-scalable=no" />
