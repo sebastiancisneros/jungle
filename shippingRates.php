@@ -2,7 +2,6 @@
 
 $root = realpath($_SERVER["DOCUMENT_ROOT"]);
 
-echo $root;
 require_once("easypost-php/lib/easypost.php");
 
 function connectToDb(){
@@ -24,22 +23,23 @@ $shippingData = json_decode($_POST['shippingData']);
 
 
 //var_dump($shippingData);
-
-$orderId = $shippingData->orderId;
-$recipient['name'] = $shippingData->name;
-$recipient['company'] = $shippingData->company;
-$recipient['address1'] = $shippingData->address1;
-$recipient['address2'] = $shippingData->address2;
-$recipient['city'] = $shippingData->city;
-$recipient['state'] = $shippingData->state;
-$recipient['postalCode'] = $shippingData->postalCode;
-$measurements['height'] = $shippingData->height;
-$measurements['width'] = $shippingData->width;
-$measurements['depth'] = $shippingData->depth;
-$measurements['weight'] = $shippingData->weight;
-$service = $shippingData->service;
-$carrier = $shippingData->carrier;
-$request = $shippingData->request;
+if ($shippingData){
+  $orderId = $shippingData->orderId;
+  $recipient['name'] = $shippingData->name;
+  $recipient['company'] = $shippingData->company;
+  $recipient['address1'] = $shippingData->address1;
+  $recipient['address2'] = $shippingData->address2;
+  $recipient['city'] = $shippingData->city;
+  $recipient['state'] = $shippingData->state;
+  $recipient['postalCode'] = $shippingData->postalCode;
+  $measurements['height'] = $shippingData->height;
+  $measurements['width'] = $shippingData->width;
+  $measurements['depth'] = $shippingData->depth;
+  $measurements['weight'] = $shippingData->weight;
+  $service = $shippingData->service;
+  $carrier = $shippingData->carrier;
+  $request = $shippingData->request;
+}
 
 if ($request == "quote"){
   getShippingRates($recipient, $measurements);
@@ -57,7 +57,7 @@ if($_REQUEST['request'] == "label"){
       "orderId" => $orderId,
       "url" => $labelUrl,
   );
-  createShippingLabelPDF($root, $label);
+  createShippingLabelPDF($label);
 }
 function createShipment($recipient, $measurements){
     $to_address = \EasyPost\Address::create_and_verify(
@@ -284,12 +284,12 @@ function getShipment($shipmentId){
   $shipment = \EasyPost\Shipment::retrieve($shipmentId);
   return $shipment;
 }
-function createShippingLabelPDF($root, $label){
+function createShippingLabelPDF($label){
   //header('Content-type: application/pdf');
     // Create PDF
-    require_once($root.'/FPDF/fpdf.php');
-    require_once($root.'/FPDF/FPDI/src/autoload.php');
-    require_once($root.'FPDF/rotation.php');
+    require_once('FPDF/fpdf.php');
+    require_once('FPDF/FPDI/src/autoload.php');
+    require_once('FPDF/rotation.php');
     class PDF extends PDF_Rotate
     {
         function RotatedText($x, $y, $txt, $angle)
