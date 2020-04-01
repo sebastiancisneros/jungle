@@ -104,7 +104,6 @@ $response_result = $reponse_array->result;
                 .$rates.'
               </li>';
   }
-  echo $order_list;
 ?>
 <!DOCTYPE html>
 <head>
@@ -137,26 +136,13 @@ $response_result = $reponse_array->result;
       <div class="address">Address</div>
       <div class="service">Service</div>
     </li>
-    <?
+    <?php
       echo $order_list;
       ?>
   </ul>
 
-  <?
+  <?php
   echo $estimateResultsFema;
-/*
-echo 'Expand Individual Order';
-echo '<br/>';
-echo 'Enter Package Weight';
-echo '<br/>';
-echo 'Select Shipping Carrier';
-echo '<br/>';
-echo 'Purchase Shipping Label';
-echo '<br/>';
-echo 'Print Label';
-echo '<br/>';
-echo 'Send Shipping Confirmation';
-*/
   ?>
 
 </body
