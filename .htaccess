@@ -1,0 +1,4 @@
+AuthUserFile /users/cocanu/sites/jungle/.htpasswd
+AuthName "Secure Document"
+AuthType Basic
+require user cloudforest
