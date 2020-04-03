@@ -44,13 +44,14 @@ $response_result = $reponse_array->result;
     $num_rows = mysqli_num_rows($result);
     $shipped = false;
     if ($num_rows == 1 ){
+      $carrier = "";
+      $carrier = "";
       $shipped = true;
         while($row = mysqli_fetch_array($result))
         {
             $shipmentId = $row['shipmentId'];
             $shipment = getShipment($shipmentId);
-            //echo $_shipmentId;
-            /*$carrier = $shipment->selected_rate->carrier;
+            $carrier = $shipment->selected_rate->carrier;
             $labelUrl = $shipment->postage_label->label_url;
             $tracking = $shipment->tracking_code;
             if($carrier == "USPS"){
