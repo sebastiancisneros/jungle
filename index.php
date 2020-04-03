@@ -52,7 +52,8 @@ $response_result = $reponse_array->result;
         {
             $shipmentId = $row['shipmentId'];
             $shipment = getShipment($shipmentId);
-            $carrier = $shipment->selected_rate->carrier;
+            echo 'sid: '.$shipmentId.' sobj:'.$shipment;
+            /*$carrier = $shipment->selected_rate->carrier;
             $labelUrl = $shipment->postage_label->label_url;
             $tracking = $shipment->tracking_code;
             if($carrier == "USPS"){
@@ -61,7 +62,7 @@ $response_result = $reponse_array->result;
               $trackingURL = "http://wwwapps.ups.com/WebTracking/processInputRequest?TypeOfInquiryNumber=T&InquiryNumber1=".$tracking;
             } else if($carrier == "FEDEX"){
               $trackingURL = "https://www.fedex.com/fedextrack/?tracknumbers=".$tracking;
-            }
+            }*/
         }
     }
     if ($shipped == true){
