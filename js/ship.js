@@ -7,7 +7,6 @@ $(document).ready(function(){
     var width = parseFloat(shippingJSON.width);
     var depth = parseFloat(shippingJSON.depth);
     var weight = parseFloat(shippingJSON.weight);
-    console.log(btn);
     btn.attr("disabled", true);
     if ( (height > 0) && (width > 0) && (depth > 0) && (weight > 0) ){
       $.ajax({
@@ -36,6 +35,7 @@ $(document).ready(function(){
           className: 'vex-theme-default'
       });
     } else {
+      btn.attr("disabled", true);
       $.ajax({
               type: "POST",
               url: "../shippingRates.php",
