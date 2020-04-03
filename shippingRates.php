@@ -17,7 +17,7 @@ function connectToDb(){
     return $db;
 };
 
-\EasyPost\EasyPost::setApiKey('P00P4pRFtOegZlBlF5oomA');
+\EasyPost\EasyPost::setApiKey('HSsvjX6bqBE0EuD1hlOlUg');
 
 // GET SHIPPING RATES
 //header("Content-Type: application/json; charset=UTF-8");
