@@ -55,7 +55,7 @@ if($request == "buy"){
   $shipment = createShipment($recipient, $measurements);
   buyShippingLabel($shipment, $carrier, $service, $orderId);
 }
-if($_REQUEST){
+if(isset($_REQUEST['request'])){
   if($_REQUEST['request'] == "label"){
     $orderId = $_REQUEST['orderId'];
     $labelUrl = $_REQUEST['labelUrl'];
@@ -117,6 +117,13 @@ function getShippingRates($recipient, $measurements){
   displayRates($shipment);
 }
 function displayRates($shipment){
+  $usps_first = "";
+  $usps_parcel_select = "";
+  $usps_priority = "";
+  $usps_2ndDayAir = "";
+  $usps_express = "";
+  $ups_next_day_air = "";
+  $ups_ground = "";
   foreach ($shipment->rates as $rates){
       if($rates->carrier == "UPS" || $rates->carrier == "USPS"){
           $slash = '&nbsp;/&nbsp;';
