@@ -1,12 +1,14 @@
 // JavaScript Document
 $(document).ready(function(){
 
-  getQuote = function(shippingData, obj){
+  getQuote = function(shippingData, obj, btn){
     shippingJSON = JSON.parse(shippingData);
     var height = parseFloat(shippingJSON.height);
     var width = parseFloat(shippingJSON.width);
     var depth = parseFloat(shippingJSON.depth);
     var weight = parseFloat(shippingJSON.weight);
+    console.log(btn);
+    btn.attr("disabled", true);
     if ( (height > 0) && (width > 0) && (depth > 0) && (weight > 0) ){
       $.ajax({
               type: "POST",
@@ -14,6 +16,7 @@ $(document).ready(function(){
               data: { 'shippingData' : shippingData },
               success : function(msg){
                 obj.html(msg);
+                btn.attr("disabled", false);
               }
             });
     } else {
@@ -24,7 +27,7 @@ $(document).ready(function(){
     }
   }
 
-  buyPostage = function(shippingData, obj){
+  buyPostage = function(shippingData, obj, btn){
     shippingJSON = JSON.parse(shippingData);
     var service = shippingJSON.service;
     if (service == null || service == ""){
@@ -71,7 +74,7 @@ $(document).ready(function(){
     replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
     replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
       //the json is ok
-      getQuote(shippingData, $(this).parent().parent().children('.results'));
+      getQuote(shippingData, $(this).parent().parent().children('.results'), $(this));
     }else{
       console.log('nope');
       //the json is not ok
@@ -89,7 +92,7 @@ $(document).ready(function(){
     replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
     replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
       //the json is ok
-      buyPostage(shippingData, target);
+      buyPostage(shippingData, target, $(this));
     }else{
       console.log('nope');
       //the json is not ok
