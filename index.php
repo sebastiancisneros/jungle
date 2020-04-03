@@ -49,7 +49,7 @@ $response_result = $reponse_array->result;
         {
             $shipmentId = $row['shipmentId'];
             $shipment = getShipment($shipmentId);
-            echo $_shipmentId;
+            //echo $_shipmentId;
             /*$carrier = $shipment->selected_rate->carrier;
             $labelUrl = $shipment->postage_label->label_url;
             $tracking = $shipment->tracking_code;
